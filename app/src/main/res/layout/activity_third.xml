@@ -5,13 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".Pertemuan_3.ThirdActivity">
 
     <Button
         android:id="@+id/btnKirim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginHorizontal="30dp"
+        android:backgroundTint="#ff8000"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,11 +28,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="196dp"
-        android:ems="10"
+        android:ems="15"
         android:inputType="text"
-        android:text="Name"
+        android:text="Masukkan Nomor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="194dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="331dp"
+        android:text="@string/judul"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#ff8000"
+        android:fontFamily="@font/bungee_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

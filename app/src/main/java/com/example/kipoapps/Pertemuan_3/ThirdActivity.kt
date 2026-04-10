@@ -1,5 +1,6 @@
 package com.example.kipoapps.Pertemuan_3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -26,11 +27,12 @@ class ThirdActivity : AppCompatActivity() {
         }
 
         binding.btnKirim.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
             val nomor = binding.inputNoTujuan.text
 
             Toast.makeText(this, "Nomor telah dikirm kan ke = $nomor", Toast.LENGTH_SHORT)
                 .show()
+            val intent = Intent(this, ThirdResultActivity::class.java)
+            startActivity(intent)
 
         }
     }
