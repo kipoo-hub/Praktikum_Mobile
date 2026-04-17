@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Nomor telah dikirm kan ke = $nomor", Toast.LENGTH_SHORT)
                 .show()
             val intent = Intent(this, FourthActivity::class.java)
+
+            /*tambahkan bagian berikut*/
+            intent.putExtra("nama", "Politeknik Caltex Riau")
+            intent.putExtra("asal", "Rumbai")
+            intent.putExtra("umur", 25)
+
             startActivity(intent)
 
         }

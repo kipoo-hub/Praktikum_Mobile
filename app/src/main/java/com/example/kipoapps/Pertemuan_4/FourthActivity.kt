@@ -2,6 +2,7 @@ package com.example.kipoapps.Pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,14 +26,25 @@ class FourthActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnKirim.setOnClickListener {
-            val nomor = binding.inputTujuan.text
+        val name = intent.getStringExtra("nama")
+        val from = intent.getStringExtra("asal")
+        val age = intent.getIntExtra("usia",0)
+        Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
-            Toast.makeText(this, "Nomor telah dikirm kan ke = $nomor", Toast.LENGTH_SHORT)
-                .show()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+
+        binding.btnKirim.setOnClickListener {
+            finish()
 
         }
+        Log.e("onCreate", "{FourthActivity dibuat pertama kali")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("onStart", "onStart: FourthActivity terlihat di layar")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("onDestroy", "{FourthActivity dihapus dari stack")
     }
 }
