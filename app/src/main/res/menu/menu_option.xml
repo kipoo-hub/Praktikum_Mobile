@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_web"
+        android:title="Web"
+        android:icon="@drawable/ic_web"
+        app:showAsAction="never"/>
+
+    <!-- 🔥 IMPROVISASI SUBMENU -->
+    <item
+        android:title="Settings"
+        app:showAsAction="never">
+
+        <menu>
+            <item
+                android:id="@+id/menu_dark"
+                android:title="Dark Mode"
+                android:checkable="true"/>
+
+            <item
+                android:id="@+id/menu_light"
+                android:title="Light Mode"
+                android:checkable="true"/>
+        </menu>
+    </item>
+
+</menu>

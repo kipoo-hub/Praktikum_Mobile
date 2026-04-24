@@ -7,19 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Pertemuan_4.FourthActivity">
 
-    <Button
-        android:id="@+id/btnKirim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputTujuan"
-        app:layout_constraintVertical_bias="0.954" />
-
     <EditText
         android:id="@+id/inputTujuan"
         android:layout_width="wrap_content"
@@ -27,45 +14,56 @@
         android:ems="10"
         android:inputType="text"
         android:text="Pertemuan 4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="332dp"
+        android:id="@+id/materialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnKirim"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/inputTujuan">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp">
+            android:orientation="vertical"
+            android:padding="15dp">
 
+            <Button
+                android:id="@+id/btnShowAlertDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF8000"
+                android:text="Show AlertDialog" />
 
+            <Button
+                android:id="@+id/btnShowSnackbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/black"
+                android:text="Show SnackBar" />
 
-        <Button
-            android:id="@+id/btnShowAlertDialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF8000"
-            android:text="Show AlertDialog" />
-
-        <Button
-            android:id="@+id/btnShowSnackbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:text="Show SnackBar" />
-
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
+    <Button
+        android:id="@+id/btnKirim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
