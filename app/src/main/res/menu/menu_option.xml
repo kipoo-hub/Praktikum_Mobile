@@ -5,31 +5,21 @@
     <item
         android:id="@+id/menu_home"
         android:title="Home"
-        android:icon="@drawable/ic_home"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/menu_web"
-        android:title="Web"
-        android:icon="@drawable/ic_web"
-        app:showAsAction="never"/>
+        android:title="Buka Web"
+        app:showAsAction="never" />
 
-    <!-- 🔥 IMPROVISASI SUBMENU -->
-    <item
-        android:title="Settings"
-        app:showAsAction="never">
-
-        <menu>
-            <item
-                android:id="@+id/menu_dark"
-                android:title="Dark Mode"
-                android:checkable="true"/>
-
-            <item
-                android:id="@+id/menu_light"
-                android:title="Light Mode"
-                android:checkable="true"/>
-        </menu>
-    </item>
-
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_dark"
+            android:title="Dark Mode"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/menu_light"
+            android:title="Light Mode"
+            app:showAsAction="never" />
+    </group>
 </menu>

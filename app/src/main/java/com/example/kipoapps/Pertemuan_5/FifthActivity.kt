@@ -9,13 +9,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kipoapps.pertemuan_5.WebViewActivity
 import com.example.kipoapps.R
 import com.example.kipoapps.databinding.ActivityFifthBinding
 
 class FifthActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityFifthBinding
+    private lateinit var binding: ActivityFifthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,56 +23,56 @@ class FifthActivity : AppCompatActivity() {
         binding = ActivityFifthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Penyesuaian Insets untuk CoordinatorLayout
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // 🔥 TOOLBAR (TIRU DARI MODUL)
+        // Setup Toolbar
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            // Menggunakan icon back default android
+            setHomeAsUpIndicator(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
+        }
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
-
-        // 🔥 BUTTON KE WEBVIEW
         binding.btnWeb.setOnClickListener {
             startActivity(Intent(this, WebViewActivity::class.java))
         }
     }
 
-    // 🔥 WAJIB BIAR TITIK 3 MUNCUL (OPTION MENU)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Pastikan file res/menu/menu_option.xml sudah ada
         menuInflater.inflate(R.menu.menu_option, menu)
         return true
     }
 
-    // 🔥 HANDLE SEMUA MENU
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        return when(item.itemId) {
             android.R.id.home -> {
                 finish()
-                return true
+                true
             }
-
             R.id.menu_home -> {
+                Toast.makeText(this, "Kembali ke Home", Toast.LENGTH_SHORT).show()
                 finish()
+                true
             }
-
             R.id.menu_web -> {
                 startActivity(Intent(this, WebViewActivity::class.java))
+                true
             }
-
             R.id.menu_dark -> {
-                item.isChecked = !item.isChecked
-                Toast.makeText(this, "Dark Mode Dipilih", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Dark Mode Aktif", Toast.LENGTH_SHORT).show()
+                true
             }
-
             R.id.menu_light -> {
-                item.isChecked = !item.isChecked
-                Toast.makeText(this, "Light Mode Dipilih", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Light Mode Aktif", Toast.LENGTH_SHORT).show()
+                true
             }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
 }
