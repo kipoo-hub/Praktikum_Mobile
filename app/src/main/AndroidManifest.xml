@@ -14,13 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KipoApps">
         <activity
-            android:name=".Pertemuan_6.SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Pertemuan_6.AuthActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Pertemuan_6.MainActivity"
+            android:name=".Pertemuan_7.SeventhActivity"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -29,8 +23,17 @@
         </intent-filter>
         </activity>
         <activity
+            android:name=".Pertemuan_6.SplashScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan_6.AuthActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".Pertemuan_6.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_5.FifthActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".pertemuan_5.WebViewActivity"
             android:exported="false" />

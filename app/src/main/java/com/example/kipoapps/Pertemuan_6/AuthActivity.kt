@@ -24,7 +24,7 @@ class AuthActivity : AppCompatActivity() {
         // 2. CEK STATUS: Jika sudah login, langsung ke MainActivity
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, com.example.kipoapps.Pertemuan_6.MainActivity::class.java))
             finish()
             return
         }
@@ -55,7 +55,7 @@ class AuthActivity : AppCompatActivity() {
                 }
 
                 // Pindah ke MainActivity
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, com.example.kipoapps.Pertemuan_6.MainActivity::class.java))
                 finish()
             } else {
                 // Tampilkan AlertDialog jika gagal
