@@ -1,7 +1,6 @@
-package com.example.kipoapps.Pertemuan_7
+package com.example.kipoapps.Home.Pertemuan_7
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

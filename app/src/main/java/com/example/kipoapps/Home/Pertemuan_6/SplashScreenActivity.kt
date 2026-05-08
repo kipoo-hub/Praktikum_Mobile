@@ -1,6 +1,5 @@
-package com.example.kipoapps.Pertemuan_6
+package com.example.kipoapps.Home.Pertemuan_6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,12 +18,12 @@ class SplashScreenActivity : AppCompatActivity() {
             delay(2000)
 
             // Cek SharedPreferences
-            val sharedPref = getSharedPreferences("SlebewPrefs", Context.MODE_PRIVATE)
+            val sharedPref = getSharedPreferences("SlebewPrefs", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             if (isLogin) {
                 // Jika sudah login, arahkan ke MainActivity
-                val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+                val intent = Intent(this@SplashScreenActivity, BaseActivity::class.java)
                 startActivity(intent)
             } else {
                 // Jika belum login, arahkan ke AuthActivity (Halaman Login)

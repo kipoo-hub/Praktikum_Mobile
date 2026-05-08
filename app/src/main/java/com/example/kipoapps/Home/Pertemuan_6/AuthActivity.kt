@@ -1,6 +1,5 @@
-package com.example.kipoapps.Pertemuan_6
+package com.example.kipoapps.Home.Pertemuan_6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kipoapps.MainActivity
 import com.example.kipoapps.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -19,12 +17,12 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // 1. Inisialisasi SharedPreferences (Disamakan dengan SplashScreen)
-        val sharedPref = getSharedPreferences("KipoPrefs", Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("KipoPrefs", MODE_PRIVATE)
 
         // 2. CEK STATUS: Jika sudah login, langsung ke MainActivity
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            startActivity(Intent(this, com.example.kipoapps.Pertemuan_6.MainActivity::class.java))
+            startActivity(Intent(this, com.example.kipoapps.Home.Pertemuan_6.BaseActivity::class.java))
             finish()
             return
         }
@@ -55,7 +53,7 @@ class AuthActivity : AppCompatActivity() {
                 }
 
                 // Pindah ke MainActivity
-                startActivity(Intent(this, com.example.kipoapps.Pertemuan_6.MainActivity::class.java))
+                startActivity(Intent(this, com.example.kipoapps.Home.Pertemuan_6.MainActivity::class.java))
                 finish()
             } else {
                 // Tampilkan AlertDialog jika gagal

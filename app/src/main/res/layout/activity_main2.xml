@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pertemuan_6.MainActivity">
+    tools:context=".Home.Pertemuan_6.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

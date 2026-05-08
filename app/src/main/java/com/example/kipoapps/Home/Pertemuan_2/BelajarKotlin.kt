@@ -1,4 +1,4 @@
-package com.example.kipoapps.Pertemuan_2
+package com.example.kipoapps.Home.Pertemuan_2
 
 fun main() {
     println("Hai rekan rekan...")

@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kipoapps.Pertemuan_4.FourthActivity
+import com.example.kipoapps.Home.Pertemuan_4.FourthActivity
 import com.example.kipoapps.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

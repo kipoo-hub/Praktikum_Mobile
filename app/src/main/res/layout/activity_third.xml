@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img"
-    tools:context=".Pertemuan_3.ThirdActivity">
+    tools:context=".Home.Pertemuan_3.ThirdActivity">
 
     <ImageView
         android:id="@+id/imageView"

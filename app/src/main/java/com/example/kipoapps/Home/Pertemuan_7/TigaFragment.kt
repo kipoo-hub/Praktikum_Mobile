@@ -1,4 +1,4 @@
-package com.example.kipoapps.Pertemuan_7
+package com.example.kipoapps.Home.Pertemuan_7
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

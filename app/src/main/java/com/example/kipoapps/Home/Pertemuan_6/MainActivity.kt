@@ -1,6 +1,5 @@
-package com.example.kipoapps.Pertemuan_6
+package com.example.kipoapps.Home.Pertemuan_6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kipoapps.R
 import com.example.kipoapps.databinding.ActivityMain2Binding
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 setMessage("Apakah Anda yakin ingin keluar?")
                 setPositiveButton("Ya") { _, _ ->
                     // 1. Update SharedPreferences ke false
-                    val sharedPref = getSharedPreferences("KipoPrefs", Context.MODE_PRIVATE)
+                    val sharedPref = getSharedPreferences("KipoPrefs", MODE_PRIVATE)
                     sharedPref.edit().apply {
                         putBoolean("isLogin", false)
                         apply()
@@ -54,5 +52,6 @@ class MainActivity : AppCompatActivity() {
                 show()
             }
         }
+
     }
 }

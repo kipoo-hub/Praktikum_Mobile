@@ -1,4 +1,4 @@
-package com.example.kipoapps.Pertemuan_3
+package com.example.kipoapps.Home.Pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kipoapps.R
 import com.example.kipoapps.databinding.ActivityThirdBinding
 
 class ThirdActivity : AppCompatActivity() {
