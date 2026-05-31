@@ -83,7 +83,16 @@
                 android:id="@+id/btnToNinth"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
+                android:layout_marginBottom="12dp"
                 android:text="Pertemuan 9"
+                app:backgroundTint="@color/red"
+                app:cornerRadius="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToTenth"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Pertemuan 10"
                 app:backgroundTint="@color/red"
                 app:cornerRadius="12dp" />
 

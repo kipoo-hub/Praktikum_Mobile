@@ -14,11 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KipoApps">
         <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false"
+            android:label="Pertemuan 10" />
+        <activity
             android:name=".Home.Pertemuan_9.NinthActivity"
             android:exported="false" />
         <activity
             android:name=".Home.Pertemuan_6.BaseActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
+
         <activity
             android:name=".Home.Pertemuan_7.SeventhActivity"
             android:exported="false" />

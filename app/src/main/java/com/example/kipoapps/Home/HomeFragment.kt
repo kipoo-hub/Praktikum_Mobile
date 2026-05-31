@@ -11,6 +11,7 @@ import com.example.kipoapps.Home.Pertemuan_3.ThirdResultActivity
 import com.example.kipoapps.Home.Pertemuan_4.FourthActivity
 import com.example.kipoapps.Home.Pertemuan_6.SplashScreenActivity
 import com.example.kipoapps.Home.Pertemuan_9.NinthActivity
+import com.example.kipoapps.Home.pertemuan_10.TenthActivity
 import com.example.kipoapps.R
 import com.example.kipoapps.databinding.FragmentHomeBinding
 import com.example.kipoapps.pertemuan_5.WebViewActivity
@@ -66,6 +67,11 @@ class HomeFragment : Fragment() {
         }
         binding.btnToNinth.setOnClickListener {
             startActivity(Intent(requireContext(), NinthActivity::class.java))
+        }
+
+        // Pertemuan 10 - TabLayout
+        binding.btnToTenth.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
     }
 
