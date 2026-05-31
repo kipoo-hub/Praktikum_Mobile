@@ -28,6 +28,7 @@ class TenthActivity : AppCompatActivity() {
             tab.text = when (position) {
                 0 -> "Tab A"
                 1 -> "Tab B"
+                2 -> "Tab C"
                 else -> null
             }
         }.attach()
