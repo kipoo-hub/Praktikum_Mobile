@@ -6,15 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kipoapps.Home.Pertemuan_2.SecondActivity
 import com.example.kipoapps.Home.Pertemuan_3.ThirdResultActivity
 import com.example.kipoapps.Home.Pertemuan_4.FourthActivity
 import com.example.kipoapps.Home.Pertemuan_6.SplashScreenActivity
 import com.example.kipoapps.Home.Pertemuan_9.NinthActivity
 import com.example.kipoapps.Home.pertemuan_10.TenthActivity
+import com.example.kipoapps.Home.photo.PhotoAdapter
 import com.example.kipoapps.R
 import com.example.kipoapps.data.api.CatFactApiClient
+import com.example.kipoapps.data.api.PhotoApiClient
 import com.example.kipoapps.databinding.FragmentHomeBinding
 import com.example.kipoapps.pertemuan_5.WebViewActivity
 import kotlinx.coroutines.launch
@@ -26,7 +30,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -36,10 +40,12 @@ class HomeFragment : Fragment() {
 
         setupNavigation()
         loadCatFact()
-
+        loadPhoto()
         binding.btnRefresh.setOnClickListener {
             loadCatFact()
         }
+
+
     }
 
     private fun setupNavigation() {
@@ -62,7 +68,7 @@ class HomeFragment : Fragment() {
         binding.btnToSixth.setOnClickListener {
             startActivity(Intent(requireContext(), SplashScreenActivity::class.java))
         }
-        
+
         binding.btnToNinth.setOnClickListener {
             startActivity(Intent(requireContext(), NinthActivity::class.java))
         }
@@ -81,6 +87,27 @@ class HomeFragment : Fragment() {
             } catch (e: Exception) {
                 e.printStackTrace()
                 binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+        }
+    }
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
             }
         }
     }
