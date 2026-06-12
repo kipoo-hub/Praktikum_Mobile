@@ -1,8 +1,6 @@
-package com.example.kipoapps.Home.Pertemuan_6
+package com.example.kipoapps
 
 import android.os.Bundle
-import android.os.Message
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,7 +10,6 @@ import com.example.kipoapps.Home.HomeFragment
 import com.example.kipoapps.Message.MessageFragment
 import com.example.kipoapps.More.MoreFragment
 import com.example.kipoapps.Note.NoteFragment
-import com.example.kipoapps.R
 import com.example.kipoapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {

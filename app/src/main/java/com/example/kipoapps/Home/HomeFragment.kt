@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kipoapps.Home.Pertemuan_2.SecondActivity
 import com.example.kipoapps.Home.Pertemuan_3.ThirdResultActivity
 import com.example.kipoapps.Home.Pertemuan_4.FourthActivity
-import com.example.kipoapps.Home.Pertemuan_6.SplashScreenActivity
+import com.example.kipoapps.SplashScreenActivity
 import com.example.kipoapps.Home.Pertemuan_9.NinthActivity
 import com.example.kipoapps.Home.pertemuan_10.TenthActivity
 import com.example.kipoapps.Home.photo.PhotoAdapter

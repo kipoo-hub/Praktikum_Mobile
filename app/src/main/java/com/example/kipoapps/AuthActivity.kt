@@ -1,4 +1,4 @@
-package com.example.kipoapps.Home.Pertemuan_6
+package com.example.kipoapps
 
 import android.content.Intent
 import android.os.Bundle
@@ -22,7 +22,7 @@ class AuthActivity : AppCompatActivity() {
         // 2. CEK STATUS: Jika sudah login, langsung ke MainActivity
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            startActivity(Intent(this, com.example.kipoapps.Home.Pertemuan_6.BaseActivity::class.java))
+            startActivity(Intent(this, BaseActivity::class.java))
             finish()
             return
         }
@@ -53,7 +53,7 @@ class AuthActivity : AppCompatActivity() {
                 }
 
                 // Pindah ke MainActivity
-                startActivity(Intent(this, com.example.kipoapps.Home.Pertemuan_6.MainActivity::class.java))
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
             } else {
                 // Tampilkan AlertDialog jika gagal
