@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.kipoapps.Home.HomeFragment
 import com.example.kipoapps.Message.MessageFragment
 import com.example.kipoapps.More.MoreFragment
+import com.example.kipoapps.Note.NoteFragment
 import com.example.kipoapps.R
 import com.example.kipoapps.databinding.ActivityBaseBinding
 
@@ -38,6 +39,11 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false // return false jika item tidak ada yang di klik
