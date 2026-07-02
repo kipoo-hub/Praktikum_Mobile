@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -45,12 +48,6 @@
             android:name=".AuthActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
@@ -67,6 +64,10 @@
             android:exported="false" />
         <activity
             android:name=".Home.Pertemuan_2.SecondActivity"
+            android:exported="false" />
+
+        <receiver
+            android:name=".utils.ReminderReceiver"
             android:exported="false" />
     </application>
 

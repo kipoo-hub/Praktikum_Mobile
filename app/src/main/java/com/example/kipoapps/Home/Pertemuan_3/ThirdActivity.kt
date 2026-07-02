@@ -1,17 +1,32 @@
 package com.example.kipoapps.Home.Pertemuan_3
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.kipoapps.databinding.ActivityThirdBinding
+import com.example.kipoapps.utils.NotificationHelper
+import com.example.kipoapps.utils.PermissionHelper
+import com.example.kipoapps.utils.ReminderHelper
+import java.util.Calendar
 
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
+
+    private val notificationPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                Toast.makeText(this, "Notifikasi diizinkan", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Notifikasi ditolak", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,20 +42,45 @@ class ThirdActivity : AppCompatActivity() {
             insets
         }
 
+        if (PermissionHelper.isNotificationPermissionRequired()) {
+            val permission = Manifest.permission.POST_NOTIFICATIONS
+            if (!PermissionHelper.hasPermission(this, permission)) {
+                PermissionHelper.requestPermission(
+                    notificationPermissionLauncher,
+                    permission
+                )
+            }
+        }
+
         binding.buttonSubmit.setOnClickListener {
-            // Mengambil value dari inputNama, ubah ke String, lalu tampilkan di Logcat
-            val nama = binding.inputNama.text.toString()
-            Log.d("ThirdActivity", "Data Input: $nama")
+            val username = binding.inputNama.text.toString()
+            val password = binding.inputPassword.text.toString()
 
-            if (nama.isNotEmpty()) {
-                Toast.makeText(this, "Berhasil mengirim: $nama", Toast.LENGTH_SHORT).show()
+            Log.d("ThirdActivity", "Login Attempt: $username")
 
+            if (username.isNotEmpty() && password.isNotEmpty()) {
+                // Simulasi login sukses
+                Toast.makeText(this, "Login Berhasil: $username", Toast.LENGTH_SHORT).show()
+                
                 val intent = Intent(this, ThirdResultActivity::class.java)
-                // Jika ingin mengirim data ke activity tujuan, gunakan:
-                // intent.putExtra("USER_NAME", nama)
+                
+                // Tetap sertakan fitur Reminder 1 menit sebagai variasi tugas
+                val calendar = Calendar.getInstance().apply {
+                    add(Calendar.MINUTE, 1)
+                }
+
+                ReminderHelper.setReminder(
+                    context = this,
+                    hour = calendar.get(Calendar.HOUR_OF_DAY),
+                    minute = calendar.get(Calendar.MINUTE),
+                    title = "Sesi Login",
+                    message = "Halo $username, sesi login Anda akan berakhir.",
+                    targetActivity = ThirdResultActivity::class.java
+                )
+                
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Silakan isi nomor terlebih dahulu", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Username dan Password harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
     }

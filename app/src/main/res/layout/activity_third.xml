@@ -10,11 +10,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="194dp"
-        android:layout_height="310dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hp" />
@@ -23,42 +22,55 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="331dp"
-        android:text="@string/judul"
-        android:textSize="25sp"
+        android:layout_marginTop="16dp"
+        android:text="Login Pertemuan 3"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#ff8000"
         android:fontFamily="@font/bungee_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/inputNama"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="196dp"
-        android:ems="15"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:hint="Username"
         android:inputType="text"
-        android:hint="Masukkan Nomor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNama" />
 
     <Button
         android:id="@+id/buttonSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginHorizontal="30dp"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#ff8000"
-        android:text="Kirim"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Login"
+        app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNama"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

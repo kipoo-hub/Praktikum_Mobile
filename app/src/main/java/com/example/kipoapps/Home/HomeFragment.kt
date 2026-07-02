@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kipoapps.Home.Pertemuan_2.SecondActivity
+import com.example.kipoapps.Home.Pertemuan_3.ThirdActivity
 import com.example.kipoapps.Home.Pertemuan_3.ThirdResultActivity
 import com.example.kipoapps.Home.Pertemuan_4.FourthActivity
 import com.example.kipoapps.SplashScreenActivity
@@ -54,7 +55,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnToThird.setOnClickListener {
-            startActivity(Intent(requireContext(), ThirdResultActivity::class.java))
+            startActivity(Intent(requireContext(), ThirdActivity::class.java))
         }
 
         binding.btnToFourth.setOnClickListener {
